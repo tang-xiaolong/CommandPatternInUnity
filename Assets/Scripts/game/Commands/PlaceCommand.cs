@@ -64,6 +64,6 @@ public class PlaceCommand : BaseCommand
 
     public override string ToString()
     {
-        return "PlaceCubeCommand_" + this.GetHashCode();
+        return "PlaceCubeCommand";
     }
 }

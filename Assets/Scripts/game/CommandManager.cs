@@ -11,6 +11,7 @@ public class CommandManager : MonoBehaviour, IDisposable
     private int count;
 
     public Text txtCommand; 
+    public Text txtOperation; 
     StringBuilder _txtStringBuilder = new StringBuilder();
 
     void Awake()
@@ -31,6 +32,7 @@ public class CommandManager : MonoBehaviour, IDisposable
                 count -= 1;
                 _historyCommands[count].Undo();
                 RefreshCommandShow();
+                txtOperation.text = "撤销";
             }
             
         }
@@ -42,6 +44,7 @@ public class CommandManager : MonoBehaviour, IDisposable
                 command.Execute();
                 count += 1;
                 RefreshCommandShow();
+                txtOperation.text = "反撤销";
             }
         }
     }
@@ -58,6 +61,7 @@ public class CommandManager : MonoBehaviour, IDisposable
         _historyCommands.Add(command);
         count++;
         command.Execute();
+        txtOperation.text = command.ToString();
         RefreshCommandShow();
     }
 

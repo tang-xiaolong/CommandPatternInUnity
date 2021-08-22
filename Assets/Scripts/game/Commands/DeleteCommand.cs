@@ -62,7 +62,7 @@ public class DeleteCommand : BaseCommand
 
     public override string ToString()
     {
-        return "DeleteCubeCommand_" + this.GetHashCode();
+        return "DeleteCubeCommand";
     }
     
 }
